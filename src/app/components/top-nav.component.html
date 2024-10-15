@@ -13,19 +13,16 @@
     <div class="collapse navbar-collapse justify-content--flex-end">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a (click)="selectPage(1)" class="nav-link click-scroll" [ngClass]="{'is-active': menu == 1}"
-             [routerLinkActive]="['is-active']" [routerLink]="['/']">Home</a>
-        </li>
-        <!-- <li class="nav-item">
-            <a (click)="selectPage(2)" [routerLinkActive]="['is-active']" class="nav-link click-scroll" [ngClass]="{'is-active': menu == 2}">Evenimente</a>
-        </li> -->
-        <li class="nav-item">
-          <a (click)="selectPage(3)" [routerLinkActive]="['is-active']" class="nav-link click-scroll"
-             [ngClass]="{'is-active': menu == 3}">Doneaza</a>
+          <a [class.is-active]="isHome()" class="nav-link click-scroll" [routerLink]="['/']">Home</a>
         </li>
         <li class="nav-item">
-          <a (click)="selectPage(4)" [routerLinkActive]="['is-active']" class="nav-link click-scroll"
-             [ngClass]="{'is-active': menu == 4}" [routerLink]="['/contact']">Contact</a>
+            <a [routerLinkActive]="['is-active']" class="nav-link click-scroll" [routerLink]="['/evenimente']">Evenimente</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLinkActive]="['is-active']" class="nav-link click-scroll" [routerLink]="['/doneaza']">Doneaza</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLinkActive]="['is-active']" class="nav-link click-scroll" [routerLink]="['/contact']">Contact</a>
         </li>
         <!-- <li class="nav-item">
             <a (click)="selectPage(5)" [routerLinkActive]="['is-active']" class="nav-link" [ngClass]="{'is-active': menu == 5}">Resurse</a>
@@ -33,11 +30,10 @@
       </ul>
     </div>
 
-    <div>
-      <button class="d-block btn-menu top-nav-btn-menu" type="button" (click)="opened=!opened; addTransition()">
-        <mat-icon>menu</mat-icon>
-      </button>
-    </div>
+    <button class="btn-menu top-nav-btn-menu" type="button" (click)="opened=!opened; addTransition()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
 
     <mat-sidenav class="side-nav-top left-navbar" id="sidebar-t" [(opened)]="opened" style="color: white;">
       <button class="d-block menu-btn-close" type="button" (click)="opened=!opened; addTransition()">
@@ -45,18 +41,16 @@
       </button>
 
       <!-- <img style="height: 50px;" class="margin-bottom--20" src="/assets/images/logo_new_Efraim.png" alt="Error"> -->
-      <a (click)="selectPage(1)" class="nav-link click-scroll margin-bottom--10"
-         [ngClass]="{'is-active': menu == 1}" style="font-size: x-large;" [routerLinkActive]="['is-active']"
-         [routerLink]="['']" (click)="opened=!opened; addTransition()">Home</a>
-
-      <a (click)="selectPage(3)" [routerLinkActive]="['is-active']"
-         class="nav-link click-scroll margin-bottom--10" style="font-size: x-large;"
-         [ngClass]="{'is-active': menu == 3}" (click)="opened=!opened; addTransition()">Doneaza</a>
-
-      <a (click)="selectPage(4)" [routerLinkActive]="['is-active']"
-         class="nav-link click-scroll margin-bottom--10" style="font-size: x-large;"
-         [ngClass]="{'is-active': menu == 4}" [routerLink]="['/contact']"
-         (click)="opened=!opened; addTransition()">Contact</a>
+      <a class="nav-link click-scroll margin-bottom--10 font-size--25" [class.is-active]="isHome()"
+         [routerLink]="['/']" (click)="opened=!opened; addTransition()">Home</a>
+      <a class="nav-link click-scroll margin-bottom--10 font-size--25" [routerLink]="['/evenimente']"
+         [routerLinkActive]="['is-active']" (click)="opened=!opened; addTransition()">Evenimente</a>
+      <a class="nav-link click-scroll margin-bottom--10 font-size--25" [routerLink]="['/doneaza']"
+         [routerLinkActive]="['is-active']" (click)="opened=!opened; addTransition()">Doneaza</a>
+      <a class="nav-link click-scroll margin-bottom--10 font-size--25" [routerLink]="['/contact']"
+         [routerLinkActive]="['is-active']" (click)="opened=!opened; addTransition()">Contact</a>
+      <!-- <a class="nav-link click-scroll margin-bottom--10 font-size--25" [routerLink]="['/resurse']"
+          [routerLinkActive]="['is-active']" (click)="opened=!opened; addTransition()">Resurse</a> -->
     </mat-sidenav>
   </div>
 </nav>

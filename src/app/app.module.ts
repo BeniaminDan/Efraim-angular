@@ -24,6 +24,8 @@ import { LoaderService } from './services/loader.service';
 import { FooterComponent } from './components/footer.component';
 import { ChurchLocation } from './components/church-location.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { DonateComponent } from "./components/donate.component";
+import { EventsComponent } from "./components/events.component";
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
     SocialMediaLinksComponent,
     ContactComponent,
     DateFormatDirective,
-    ChurchLocation
+    ChurchLocation,
+    DonateComponent,
+    EventsComponent
   ],
   imports: [
     BrowserModule,

@@ -17,14 +17,15 @@ https://templatemo.com/tm-583-festava-live
 @import url("/fonts/bootstrap-icons.woff2"); */
 :root {
   --white-color:                  #ffffff;
+  --black-color:                  #000000;
   --primary-color:                #d8c14a;
   --secondary-color:              #EE5007;
   --section-bg-color:             #f0f8ff;
   --custom-btn-bg-color:          #EE5007;
   --custom-btn-bg-hover-color:    #c01f27;
-  --dark-color:                   #000000;
+  --dark-color:                   #151414;
   --p-color:                      #717275;
-  --border-color:                 #7fffd4;
+  --border-color:                 #2E2E2E;
   --link-hover-color:             #B22727;
 
   /* --body-font-family:             'apple', cursive; */
@@ -55,8 +56,12 @@ https://templatemo.com/tm-583-festava-live
 }
 
 body {
-  background: linear-gradient(200.6deg, rgba(0, 0, 0, 0.93) 11.2%, rgb(63, 61, 61) 78.9%);
+  /*background: linear-gradient(200.6deg, var(--dark-color), rgba(0, 0, 0, 0.93) 11.2%);*/
   /* font-family: var(--body-font-family);  */
+  background-color: black;
+  background-image: url('../assets/images/output-onlinepngtools.png');
+  background-repeat: repeat;
+  background-size: 300px;
   font-family: 'spartan', serif;
 }
 
@@ -127,12 +132,12 @@ button {
 
 a {
   display: inline-block;
-  color: var(--primary-color);
   text-decoration: none;
-}
+  color: var(--white-color);
 
-a:hover {
-  color: var(--link-hover-color);
+  &:hover {
+    color: var(--primary-color);
+  }
 }
 
 b,
@@ -225,6 +230,12 @@ strong {
 /*---------------------------------------
   SECTION               
 -----------------------------------------*/
+
+section {
+  min-height: calc(100dvh - var(--header-height));
+  min-height: calc(100vh - var(--header-height));
+}
+
 .section-padding {
   padding-top: 100px;
   padding-bottom: 100px;
@@ -486,6 +497,7 @@ strong {
 -----------------------------------------*/
 .video-section {
   position: relative;
+  height: calc(100dvh - var(--header-height));
   height: calc(100vh - var(--header-height));
 }
 
@@ -728,45 +740,13 @@ strong {
 /*---------------------------------------
   SOCIAL ICON               
 -----------------------------------------*/
-.social-icon {
-  margin: 0;
-  padding: 0;
-}
 
-.social-icon-item {
-  list-style: none;
-  display: inline-block;
-  vertical-align: top;
-}
 
 .inputs-row {
   margin-top: 7px;
   padding: 6px 0;
   background: #f2f2f2;
   border-radius: 4px;
-}
-
-.social-icon-link {
-  background: var(--secondary-color);
-  border-radius: var(--border-radius-large);
-  color: var(--white-color);
-  font-size: var(--copyright-font-size);
-  display: block;
-  margin-right: 10px;
-  text-align: center;
-  width: 35px;
-  height: 35px;
-  line-height: 36px;
-  transition: background 0.2s, color 0.2s;
-}
-
-.social-icon-link:hover {
-  background: var(--primary-color);
-  color: var(--white-color);
-}
-
-.social-icon-link span {
-  display: block;
 }
 
 .social-icon-link span:hover::before{
@@ -787,28 +767,6 @@ strong {
   transition: 0.2s linear;
   top: 0px;
   background-color: #000000;
-}
-
-.side-nav-top{
-  position: fixed;
-  top: 0;
-  right: 0;
-  background: #032633;
-  padding: 60px 26px;
-  height: 100vh;
-  width: 230px;
-  z-index: 99999999;
-
-  -webkit-transition: all .4s ease;  
-  -moz-transition: all .4s ease;  
-  -o-transition: all .4s ease;  
-  -ms-transition: all .4s ease;  
-  transition: all .4s ease;
-
-}
-.side-nav-top .side-nav-menu{
-  display: flex;
-  flex-direction: column;
 }
 
 /* .notfixed{

@@ -1,4 +1,4 @@
-import {Component, ElementRef, HostListener, OnInit, ViewChild} from "@angular/core";
+import {Component, ElementRef, OnInit, ViewChild} from "@angular/core";
 import { Router } from "@angular/router";
 
 @Component({
@@ -10,28 +10,15 @@ import { Router } from "@angular/router";
   export class TopNavComponent implements OnInit {
   @ViewChild('navbar') navbar: ElementRef | undefined;
   public opened: boolean = false;
-  menu: number = 1;
     constructor(
       public router: Router){
 
     }
 
     ngOnInit(){
-      setTimeout(() => {
-        switch (this.router.url) {
-          case '/contact':
-            this.selectPage(4);
-            break;
-        
-          default:
-            this.selectPage(1);
-            break;
-        }
-      }, 200);
     }
 
     ngAfterViewInit(){
-      console.log(this.navbar?.nativeElement);
       if(!this.navbar) return;
       const observer = new IntersectionObserver(
         ([e]) => {
@@ -44,13 +31,14 @@ import { Router } from "@angular/router";
       observer.observe(this.navbar?.nativeElement);
     }
 
-    selectPage(index: number){
-      this.menu = index;
-    }
     public addTransition() {
       const div = document.getElementById('sidebar-t');
       if(div){
         div.classList.toggle('left-navbar');
       }
+    }
+
+    public isHome() {
+      return this.router.url == '/';
     }
   }

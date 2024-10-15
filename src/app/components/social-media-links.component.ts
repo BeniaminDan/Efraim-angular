@@ -2,7 +2,8 @@ import { Component, OnInit } from "@angular/core";
 
 @Component({
     selector: 'social-media-links',
-    templateUrl: 'social-media-links.component.html'
+    templateUrl: 'social-media-links.component.html',
+    styleUrls: ['social-media-links.component.scss']
   })
   
   export class SocialMediaLinksComponent implements OnInit {
