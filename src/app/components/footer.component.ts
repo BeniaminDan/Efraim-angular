@@ -8,6 +8,7 @@ import { Router } from "@angular/router";
   })
   
   export class FooterComponent implements OnInit {
+  email: string = '';
     constructor(
       public router: Router){
 

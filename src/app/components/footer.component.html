@@ -72,12 +72,18 @@
               <p>Vă rugăm să nu uitați să vă abonați pentru a primi ultimele noastre informații și actualizări. Introduceți adresa de e-mail în câmpul de mai jos.</p>
             </div>
             <div class="subscribe-form">
-              <form action="#">
-                <input type="text" placeholder="Email Address">
-                <button>
-                  <mat-icon fontIcon="send"></mat-icon>
-                </button>
-              </form>
+<!--              <form action="#">-->
+<!--                <input type="text" placeholder="Email Address">-->
+<!--              </form>-->
+
+              <mat-form-field class="flex-grow-1 mat-form-contact" appearance="outline">
+                <mat-label>Adresă Email</mat-label>
+                <input [(ngModel)]="email" matInput placeholder="">
+              </mat-form-field>
+
+              <button mat-button mat-raised-button class="flex-grow-1">
+                <mat-icon fontIcon="send"></mat-icon>
+              </button>
             </div>
           </div>
         </div>

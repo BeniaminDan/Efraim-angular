@@ -23,7 +23,8 @@ https://templatemo.com/tm-583-festava-live
   --section-bg-color:             #f0f8ff;
   --custom-btn-bg-color:          #EE5007;
   --custom-btn-bg-hover-color:    #c01f27;
-  --dark-color:                   #151414;
+  --background-color:             #151414;
+  --dark-color:                   #202020;
   --p-color:                      #717275;
   --border-color:                 #2E2E2E;
   --link-hover-color:             #B22727;
@@ -56,12 +57,8 @@ https://templatemo.com/tm-583-festava-live
 }
 
 body {
-  /*background: linear-gradient(200.6deg, var(--dark-color), rgba(0, 0, 0, 0.93) 11.2%);*/
   /* font-family: var(--body-font-family);  */
-  background-color: black;
-  background-image: url('../assets/images/output-onlinepngtools.png');
-  background-repeat: repeat;
-  background-size: 300px;
+  background-color: var(--background-color);
   font-family: 'spartan', serif;
 }
 
@@ -678,7 +675,7 @@ section {
   border-radius: var(--border-radius-large);
   color: var(--white-color);
   font-size: var(--p-font-size);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-normal);
   transition: all 0.3s;
   margin-bottom: 0;
 }
@@ -743,10 +740,15 @@ section {
 
 
 .inputs-row {
-  margin-top: 7px;
-  padding: 6px 0;
-  background: #f2f2f2;
+  margin-bottom: 7px;
+  padding: 8px 12px;
+  background: var(--dark-color);
   border-radius: 4px;
+  border: 1px solid var(--border-color);
+}
+
+.inputs-row * {
+  color: var(--white-color);
 }
 
 .social-icon-link span:hover::before{
@@ -888,3 +890,74 @@ section {
   font-family: 'spartan';
 }
 
+.mat-mdc-radio-button .mdc-radio__native-control:enabled:not(:checked)+.mdc-radio__background .mdc-radio__outer-circle {
+  border-color: var(--border-color)!important;
+}
+
+.mdc-text-field--outlined {
+  background-color: var(--dark-color);
+  overflow: hidden;
+  .mat-mdc-form-field-flex {
+    /* Common customizations for both labeled and non-labeled fields */
+    .mdc-notched-outline {
+    }
+
+    .mdc-notched-outline--no-label {
+    }
+
+    /* Customizing the border color of the leading, notch, and trailing parts */
+    .mdc-notched-outline__leading {
+      border-color: var(--border-color)!important;
+    }
+
+    .mdc-notched-outline__notch {
+      border-color: var(--border-color)!important;
+
+      .mdc-floating-label {
+        color: var(--white-color)!important;
+        cursor: inherit;
+      }
+    }
+
+    .mdc-notched-outline__trailing {
+      border-color: var(--border-color)!important;
+    }
+  }
+
+  /* Customizing the input text color */
+  .mat-mdc-form-field-flex .mat-mdc-form-field-infix .mdc-text-field__input {
+    color: var(--white-color);
+  }
+
+  /* Focused state customization */
+  .mdc-text-field--focused {
+    .mdc-notched-outline__leading {
+      border-color: var(--border-color)!important;
+    }
+
+    .mdc-notched-outline__notch {
+      border-color: var(--border-color)!important;
+    }
+
+    .mdc-notched-outline__trailing {
+      border-color: var(--border-color)!important;
+    }
+  }
+  .mat-mdc-form-field-icon-suffix {
+    i {
+      color: var(--white-color)!important;
+    }
+  }
+
+
+  :focus-within .mdc-notched-outline,
+  :focus-within .mdc-notched-outline__leading,
+  :focus-within .mdc-notched-outline__trailing {
+    border-color: var(--border-color)!important;
+    border-width: 1px !important;
+  }
+}
+
+.mdc-button {
+  background-color: var(--primary-color)!important;
+}
