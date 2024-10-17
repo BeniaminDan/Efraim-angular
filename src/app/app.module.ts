@@ -26,6 +26,9 @@ import { ChurchLocation } from './components/church-location.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { DonateComponent } from "./components/donate.component";
 import { EventsComponent } from "./components/events.component";
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { EventsCalendarComponent } from './components/events-calendar.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,8 @@ import { EventsComponent } from "./components/events.component";
     DateFormatDirective,
     ChurchLocation,
     DonateComponent,
-    EventsComponent
+    EventsComponent,
+    EventsCalendarComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +59,7 @@ import { EventsComponent } from "./components/events.component";
     MatNativeDateModule,
     MatRadioModule,
     AngularSvgIconModule.forRoot(),
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
   ],
   exports: [
     MatButtonModule,
